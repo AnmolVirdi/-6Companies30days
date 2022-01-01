@@ -13,13 +13,13 @@ class Solution{
         for(int i=0;i<n;i++)
         {
             product*=a[i];
-            
             while(it<n && product >= k) //if the product exceeds k, start excluding numbers from right.
             {
                 product/=a[it];
                 it++;
             }
-            res=res+(i-it+1);
+            if(it<=i)
+             res=res+(i-it+1);
         }
         return res;
     }
